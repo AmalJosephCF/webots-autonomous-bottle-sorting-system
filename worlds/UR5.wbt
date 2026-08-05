@@ -1,0 +1,101 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+IMPORTABLE EXTERNPROTO "../protos/Bottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.14609578710154367 0.019757258346502965 0.9890731377071211 2.8756759284822597
+  position 3.3933499792337294 -0.47439328171321443 1.9027666386703075
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+ConveyorBelt {
+  translation 1.89 0 0
+  rotation 0 0 1 3.14159
+  size 6 0.5 0.6
+  speed 0.1
+}
+Table {
+  translation -4.07857e-08 1.31 0
+  rotation 0 0 1 -1.5707953071795862
+  size 2 2.4 0.62
+}
+PlasticCrate {
+  translation 0.86 0.67 0.62
+  name "plastic crate red"
+  size 0.4 0.4 0.2
+}
+PlasticCrate {
+  translation 0.74 1.2 0.62
+  name "plastic crate green"
+  size 0.4 0.4 0.2
+  color 0.360784 0.901961 0.45098
+}
+PlasticCrate {
+  translation 0.1 1.75 0.62
+  name "plastic crate blue"
+  size 0.4 0.4 0.2
+  color 0.360784 0.388235 0.901961
+}
+PlasticCrate {
+  translation -0.83 0.67 0.62
+  name "plastic crate pink"
+  size 0.4 0.4 0.2
+  color 0.901961 0.345098 0.894118
+}
+PlasticCrate {
+  translation -0.67 1.27 0.62
+  name "plastic crate yellow"
+  size 0.4 0.4 0.2
+  color 0.854902 0.901961 0.552941
+}
+UR5e {
+  translation -5.0981e-08 0.81 0.61
+  rotation 0 0 1 -1.5707953071795862
+  controller "UR5-main"
+  toolSlot [
+    Robotiq3fGripper {
+    }
+    DistanceSensor {
+      translation 0 0.1 0
+      rotation 0 0 1 1.570796
+      lookupTable [
+        0 0 0
+        1 1000 0
+      ]
+      type "infra-red"
+      aperture 0.01
+    }
+    Camera {
+      translation -3.81836e-07 0.09 -0.01
+      rotation 0.70710528118436 0.707108281185553 3.3905113482557537e-09 3.14159
+      fieldOfView 1
+      width 640
+      height 480
+      far 10
+    }
+  ]
+}
+Robot {
+  name "BottleGenerator"
+  controller "bottle-generator"
+  supervisor TRUE
+}
