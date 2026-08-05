@@ -8,11 +8,7 @@ This project demonstrates how artificial intelligence, computer vision, and robo
 
 Bottles are generated inside the Webots simulation and transported through the environment using a conveyor belt. A vision system detects and classifies each bottle into one of five colour categories. The robotic arm then performs an autonomous pick-and-place operation and transfers the bottle into the correct colour-coded crate.
 
-## Demo
 
-[![Watch the Bottle Sorting Demo](assets/project_preview.png)](PASTE-YOUR-YOUTUBE-VIDEO-LINK-HERE)
-
-Click the image above to watch the complete demonstration.
 
 ## Main Features
 
